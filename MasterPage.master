@@ -85,7 +85,7 @@
                             <a href="empleado"><i class="fa fa-question fa-fw"></i> Prospectos<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#"><i class='fa fa-thumbs-down fa-fw'></i>Viables</a>
+                                    <a href="#"><i class='fa fa-thumbs-up fa-fw'></i>Viables</a>
                                 </li>
                                 <li>
                                     <a href="#"><i class='fa fa-thumbs-down fa-fw'></i>No Viables</a>
