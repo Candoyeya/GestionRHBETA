@@ -95,19 +95,19 @@
                             <a href="Departamento.aspx"><i class="fa fa-building fa-fw"></i> Departamentos</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Puesto</a>
+                            <a href="Puesto.aspx"><i class="fa fa-sitemap fa-fw"></i> Puesto</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-book fa-fw"></i> Vacantes</a>
+                            <a href="Vacante.aspx"><i class="fa fa-book fa-fw"></i> Vacantes</a>
                         </li>
                         <li>
                             <a href="empleado"><i class="fa fa-users fa-fw"></i> Empleados<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#"><i class='fa fa-check fa-fw'></i> Activos </a>
+                                    <a href="Activo.aspx"><i class='fa fa-check fa-fw'></i> Activos </a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class='fa fa-close fa-fw'></i> Inactivos</a>
+                                    <a href="Inactivo.aspx"><i class='fa fa-close fa-fw'></i> Inactivos</a>
                                 </li>
                             </ul>                  
                         </li>
@@ -115,10 +115,10 @@
                             <a href="empleado"><i class="fa fa-question fa-fw"></i> Prospectos<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#"><i class='fa fa-thumbs-up fa-fw'></i>Viables</a>
+                                    <a href="Viable.aspx"><i class='fa fa-thumbs-up fa-fw'></i>Viables</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class='fa fa-thumbs-down fa-fw'></i>No Viables</a>
+                                    <a href="NoViable.aspx"><i class='fa fa-thumbs-down fa-fw'></i>No Viables</a>
                                 </li>
                             </ul>                  
                         </li>   

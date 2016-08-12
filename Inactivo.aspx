@@ -1,16 +1,16 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="Departamento.aspx.vb" Inherits="_Default" %>
+﻿<%@ Page Title="" Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="Inactivo.aspx.vb" Inherits="Default2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="row">
         <div class="col-md-12">
-           <h2 class="titulos jumbotron">Departamentos</h2>
+           <h2 class="titulos jumbotron">Empleados Inactivos</h2>
         </div>
     </div>
 <div class="row">
     <div class="table-responsive col-md-10">
-     <table id="example" class="display">
+     <table id="example" class="display" cellspacing="0" width="100%">
             <thead>
                 <tr>
                     <th>Nombre</th>
@@ -49,28 +49,28 @@
     <div class="table-responsive col-md-2">
         <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal"><span><i class="fa fa-plus" aria-hidden="true"></i></span></button>
      </div>
-        <form action="Departamento.aspx" method="POST">
-           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <form action="empleado" method="POST">
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4>Registro de Departamento</h4>
+                    <h4 class="modal-title">Alta Departamento</h4>
                   </div>
                   <div class="modal-body">
                       <div class="form-group">
                         <label for="recipient-name" class="control-label">Nombre</label>
                         <input type="text" class="form-control" name="nombre" id="recipient-name"/>
                       </div>
-                      <!--<div class="form-group">
+                      <div class="form-group">
                         <label for="message-text" class="control-label">Departamento</label>
-                        <select class="form-control" name="departamento">
+                        <!--<select class="form-control" name="departamento">
                             <option value="#">-Departamento-</option>
                             @foreach($departamentos as $departamento)
                             <option value="{{$departamento->id}}">{{$departamento->nombre}}</option>
                             @endforeach
-                        </select>
-                      </div>-->
+                        </select>-->
+                      </div>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>

@@ -1,17 +1,16 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="EmpleadoActivo.aspx.vb" Inherits="_Default" %>
+﻿<%@ Page Title="" Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="Vacante.aspx.vb" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="row">
         <div class="col-md-12">
-           <h2 class="titulos jumbotron">Empleados Activos</h2>
+           <h2 class="titulos jumbotron">Vacantes Disponibles</h2>
         </div>
     </div>
 <div class="row">
     <div class="table-responsive col-md-10">
-     <table id="example" class="display" cellspacing="0" width="100%">
+     <table id="example" class="display">
             <thead>
                 <tr>
                     <th>Nombre</th>
@@ -36,11 +35,9 @@
                       <td>
                           <div class="row">
                               <div class="col-md-4">
-                                  <button class="btn btn-primary" ><span><i class="fa fa-pencil" aria-hidden="true"></i></span></button>
+                                  <button class="btn btn-primary btn-sm" >Ver Prospectos</button>
                               </div>
-                              <div class="col-md-4">
-                                  <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                              </div>
+                             
                           </div>
                       </td>
                   </tr>
@@ -61,7 +58,7 @@
                   <div class="modal-body">
                       <div class="form-group">
                         <label for="recipient-name" class="control-label">Nombre</label>
-                        <input type="text" class="form-control" name="nombre" id="recipient-name">
+                        <input type="text" class="form-control" name="nombre" id="recipient-name"/>
                       </div>
                       <div class="form-group">
                         <label for="message-text" class="control-label">Departamento</label>
@@ -83,8 +80,6 @@
         </form>
     </div>
 
-
-</div>
 <script type="text/javascript">
             $('#exampleModal').on('show.bs.modal', function (event) {
           var button = $(event.relatedTarget) // Button that triggered the modal
@@ -100,6 +95,5 @@
     $('#example').DataTable();
 } );
 </script>
-
 </asp:Content>
 
