@@ -115,6 +115,9 @@
                             <a href="empleado"><i class="fa fa-question fa-fw"></i> Prospectos<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
+                                    <a href="Solicitud.aspx"><i class='fa fa-pencil-square-o fa-fw'></i>Solicitudes</a>
+                                </li>
+                                <li>
                                     <a href="Viable.aspx"><i class='fa fa-thumbs-up fa-fw'></i>Viables</a>
                                 </li>
                                 <li>

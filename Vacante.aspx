@@ -44,9 +44,7 @@
             </tbody>
         </table>
     </div>
-    <div class="table-responsive col-md-2">
-        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal"><span><i class="fa fa-plus" aria-hidden="true"></i></span></button>
-     </div>
+    
         <form action="empleado" method="POST">
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
               <div class="modal-dialog" role="document">
