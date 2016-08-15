@@ -10,41 +10,7 @@
     </div>
 <div class="row">
     <div class="table-responsive col-md-10">
-     <table id="example" class="display">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Área</th>
-                    <th>CPU</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tfoot>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Área</th>
-                    <th>CPU</th>
-                    <th>Acciones</th>
-                </tr>
-            </tfoot>
-            <tbody>
-                  <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td>
-                          <div class="row">
-                              <div class="col-md-4">
-                                  <button class="btn btn-primary" ><span><i class="fa fa-pencil" aria-hidden="true"></i></span></button>
-                              </div>
-                              <div class="col-md-4">
-                                  <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                              </div>
-                          </div>
-                      </td>
-                  </tr>
-            </tbody>
-        </table>
+        <asp:PlaceHolder ID="PH1" runat="server"></asp:PlaceHolder>
     </div>
     <div class="table-responsive col-md-2">
         <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal"><span><i class="fa fa-plus" aria-hidden="true"></i></span></button>
