@@ -180,17 +180,17 @@
                      <div class="col-md-5">
                         <div class="form-group">
                             <label>¿Que personas dependen de ti?</label>
-                            <input type="text" class="form-control" name="Personas_dependen" placeholder=""/>
+                            <input type="text" class="form-control" name="Personas_dependen" placeholder="Ejemplo: Esposa, 2 hijos, Madre y Padre"/>
                          </div>
                     </div>
                             
                  </div> 
-             </div>
+             </div><br /><br />
              <!--Inicio de la segunda pestaña "Documentacion" -->
              <!--fila CURP AFORE RFC -->
         
              <div role="tabpanel" class="tab-pane" id="documentacion">
-                 <div class="alert alert-info"><strong>¡Información!</strong> <br />Terminando de llenar la informacion de esta pestaña accede a "Datos Familiares"</div>
+                 <div class="alert alert-info col-md-10"><strong>¡Información!</strong> <br />Terminando de llenar la informacion de esta pestaña accede a "Datos Familiares"</div>
                  <div class="row">
                      <div class="col-md-3">
                         <div class="form-group">
@@ -267,9 +267,271 @@
                               
                   </div>
                </div>
-            
-             <div role="tabpanel" class="tab-pane" id="familiares">3</div>
-             <div role="tabpanel" class="tab-pane" id="escolaridad">4</div>
+            <!--Inicio de la Tercera pestaña "Datos Familiares" -->
+             <!--fila Datos del Padre Nombre Vive Direccion y Ocupacion. -->
+             <div role="tabpanel" class="tab-pane" id="familiares">
+                  <div class="alert alert-info "><strong>¡Información!</strong> <br />Terminando de llenar la informacion de esta pestaña accede a "Escolaridad"</div>
+                 
+                 <fieldset><legend class="text-primary">Datos del padre</legend><div class="row">
+                     <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Nombre completo del padre</label>
+                            <input type="text" class="form-control" name="Nombre_Padre" placeholder=""/>
+                         </div>
+                    </div>
+                     <div class="col-md-1">
+                        <div class="form-group">
+                            <label>Vive</label>
+                            <select class="form-control" name="Vive_Padre">
+                                <option value="1">Si</option>
+                                <option value="2">No</option>
+                            </select>
+                         </div>
+                        </div>
+                     <div class="col-md-3">
+                         <div class="form-group">
+                            <label>Dirección</label>
+                            <input type="text" class="form-control" name="Dirección_Padre" placeholder=""/>
+                         </div>
+                    </div>
+                     <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Ocupacion</label>
+                            <input type="text" class="form-control" name="Ocupacion_Padre" placeholder=""/>
+                         </div>
+                    </div>
+                              
+                  </div></fieldset>
+                 <!--fila Datos de la Madre Nombre Vive Direccion y Ocupacion. -->
+                 <fieldset><legend class="text-primary">Datos de la Madre</legend><div class="row">
+                     <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Nombre completo de la Madre</label>
+                            <input type="text" class="form-control" name="Nombre_Padre" placeholder=""/>
+                         </div>
+                    </div>
+                     <div class="col-md-1">
+                        <div class="form-group">
+                            <label>Vive</label>
+                            <select class="form-control" name="Vive_Madre">
+                                <option value="1">Si</option>
+                                <option value="2">No</option>
+                            </select>
+                         </div>
+                        </div>
+                     <div class="col-md-3">
+                         <div class="form-group">
+                            <label>Dirección</label>
+                            <input type="text" class="form-control" name="Dirección_Madre" placeholder=""/>
+                         </div>
+                    </div>
+                     <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Ocupacion</label>
+                            <input type="text" class="form-control" name="Ocupacion_Madre" placeholder=""/>
+                         </div>
+                    </div>
+                  </div></fieldset>
+                    <!--fila Datos de la Esposa Nombre Vive Direccion y Ocupacion. -->
+                 <fieldset><legend class="text-primary">Datos de su Pareja</legend><div class="row">
+                     <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Nombre completo de su Pareja</label>
+                            <input type="text" class="form-control" name="Nombre_Esposa" placeholder=""/>
+                         </div>
+                    </div>
+                     <div class="col-md-1">
+                        <div class="form-group">
+                            <label>Vive</label>
+                            <select class="form-control" name="Vive_Esposa">
+                                <option value="1">Si</option>
+                                <option value="2">No</option>
+                            </select>
+                         </div>
+                        </div>
+                     <div class="col-md-3">
+                         <div class="form-group">
+                            <label>Dirección</label>
+                            <input type="text" class="form-control" name="Dirección_Esposa" placeholder=""/>
+                         </div>
+                    </div>
+                     <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Ocupacion</label>
+                            <input type="text" class="form-control" name="Ocupacion_Madre" placeholder=""/>
+                         </div>
+                    </div>
+                  </div></fieldset>
+                 <!--fila Datos de los hijos Nombre y edades. -->
+                 <fieldset>
+                     <legend class="text-primary">Datos de su(s) Hijo(s)</legend>
+                     <div class="row">
+                     <div class="col-md-10">
+                        <div class="form-group">
+                            <label>Nombre completo y edad de sus hijos</label>
+                            <textarea class="form-control" rows="5" placeholder=" ejemplo. 1.Raul Garcia Benitez  14 años"></textarea>
+                         </div>
+                    </div>
+                  </div>
+                 </fieldset><br /><br />
+             </div><!--Fin del div de la tercer pestaña -->
+             <div role="tabpanel" class="tab-pane" id="escolaridad">
+                 <!--Inicio de la cuarta pestaña -->
+                 <div class="alert alert-info"><strong>¡Información!</strong> <br />Terminando de llenar la informacion de esta pestaña accede a "Empleo actual y anteriores"</div>
+                 <fieldset><legend class="text-primary">Primaria</legend><div class="row">
+                     <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Nombre</label>
+                            <input type="text" class="form-control" name="Primaria" placeholder=""/>
+                         </div>
+                    </div>
+                     <div class="col-md-2">
+                        <div class="form-group">
+                            <label>Fecha de Inicio</label>
+                            <input type="date" class="form-control" name=""/>
+                         </div>
+                        </div>
+                     <div class="col-md-2">
+                         <div class="form-group">
+                            <label>Fecha fin</label>
+                            <input type="date" class="form-control" name=""/>
+                         </div>
+                    </div>
+                     <div class="col-md-1">
+                        <div class="form-group">
+                            <label>Años</label>
+                            <input type="number" class="form-control" name="Años_Primaria"/>
+                         </div>
+                    </div>
+                     <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Cuenta con Certificado</label>
+                            <select class="form-control" name="Tituto_Primaria">
+                                <option value="#">Selecciona una opción</option>
+                                <option value="1">Si</option>
+                                <option value="2">No</option>
+                            </select>
+                         </div>
+                    </div>
+                              
+                  </div></fieldset>
+                 <!--fila Datos de la Secundaria Nombre Fecha inicio fecha fin años y titulo. -->
+                <fieldset><legend class="text-primary">Secundaria</legend><div class="row">
+                     <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Nombre</label>
+                            <input type="text" class="form-control" name="Secundaria" placeholder=""/>
+                         </div>
+                    </div>
+                     <div class="col-md-2">
+                        <div class="form-group">
+                            <label>Fecha de Inicio</label>
+                            <input type="date" class="form-control" name=""/>
+                         </div>
+                        </div>
+                     <div class="col-md-2">
+                         <div class="form-group">
+                            <label>Fecha fin</label>
+                            <input type="date" class="form-control" name=""/>
+                         </div>
+                    </div>
+                     <div class="col-md-1">
+                        <div class="form-group">
+                            <label>Años</label>
+                            <input type="number" class="form-control" name="Años_Secundaria"/>
+                         </div>
+                    </div>
+                     <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Cuenta con Certificado</label>
+                            <select class="form-control" name="Tituto_Secundaria">
+                                <option value="#">Selecciona una opción</option>
+                                <option value="1">Si</option>
+                                <option value="2">No</option>
+                            </select>
+                         </div>
+                    </div>
+                  </div>
+               </fieldset>
+                  <!--fila Datos de la Preparatoria Nombre Fecha inicio fecha fin años y titulo. -->
+                <fieldset><legend class="text-primary">Preparatoria o Vocacional</legend><div class="row">
+                     <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Nombre</label>
+                            <input type="text" class="form-control" name="Preparatoria" placeholder=""/>
+                         </div>
+                    </div>
+                     <div class="col-md-2">
+                        <div class="form-group">
+                            <label>Fecha de Inicio</label>
+                            <input type="date" class="form-control" name=""/>
+                         </div>
+                        </div>
+                     <div class="col-md-2">
+                         <div class="form-group">
+                            <label>Fecha fin</label>
+                            <input type="date" class="form-control" name=""/>
+                         </div>
+                    </div>
+                     <div class="col-md-1">
+                        <div class="form-group">
+                            <label>Años</label>
+                            <input type="number" class="form-control" name="Años_Preparatoria"/>
+                         </div>
+                    </div>
+                     <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Certificado o Titulo</label>
+                            <select class="form-control" name="Titulo_Preparatoria">
+                                <option value="1">No cuento con el certificado</option>
+                                <option value="2">Cuento con el certificado</option>
+                                <option value="3">Cuento con el Titulo</option>
+                            </select>
+                         </div>
+                    </div>
+                  </div>
+               </fieldset>
+                 <!--fila Datos Profesional Nombre Fecha inicio fecha fin años y titulo. -->
+                <fieldset><legend class="text-primary">Profesional</legend><div class="row">
+                     <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Nombre</label>
+                            <input type="text" class="form-control" name="Profesional" placeholder=""/>
+                         </div>
+                    </div>
+                     <div class="col-md-2">
+                        <div class="form-group">
+                            <label>Fecha de Inicio</label>
+                            <input type="date" class="form-control" name=""/>
+                         </div>
+                        </div>
+                     <div class="col-md-2">
+                         <div class="form-group">
+                            <label>Fecha fin</label>
+                            <input type="date" class="form-control" name=""/>
+                         </div>
+                    </div>
+                     <div class="col-md-1">
+                        <div class="form-group">
+                            <label>Años</label>
+                            <input type="number" class="form-control" name="Años_Preparatoria"/>
+                         </div>
+                    </div>
+                     <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Certificado o Titulo</label>
+                            <select class="form-control" name="Titulo_Preparatoria">
+                                <option value="1">No cuento con el certificado</option>
+                                <option value="2">Pasante (carrera concluida y certificado en tramite)</option>
+                                <option value="3">Cuento con el certificado</option>
+                                <option value="4">Cuento con el certificado y mi titulo esta en tramite</option>
+                                <option value="5">Cuento con el Titulo</option>
+                            </select>
+                         </div>
+                    </div> 
+                  </div>
+               </fieldset><br /><br />
+             </div><!--Fin del div de la cuarta pestaña -->
              <div role="tabpanel" class="tab-pane" id="empleo">5</div>
              <div role="tabpanel" class="tab-pane" id="referencias">6</div>
 
