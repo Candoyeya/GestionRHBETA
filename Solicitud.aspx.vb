@@ -1,5 +1,5 @@
 ﻿
-Partial Class Default2
+Partial Class Solicitud
     Inherits System.Web.UI.Page
 
 End Class

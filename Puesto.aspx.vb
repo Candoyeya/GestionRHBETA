@@ -1,5 +1,5 @@
 ﻿
-Partial Class _Default
+Partial Class Puesto
     Inherits System.Web.UI.Page
 
 End Class

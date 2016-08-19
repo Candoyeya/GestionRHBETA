@@ -1,78 +1,34 @@
 ﻿Imports System.Data
-Partial Class _Default
+Partial Class Departamento
     Inherits System.Web.UI.Page
 
-    Private Sub Llenar()
-        Try
-            '--Consulta SQL
-            Dim sql As String = "Select * From GestionRH.dbo.TDE"
-
-            '--constructor de trabla
-            Dim _html As New StringBuilder
-            With _html
-                .Append("<table id='example' class='display'>")
-                .Append("<thead>")
-                .Append("<tr>")
-                .Append("<th>Id</th>")
-                .Append("<th>Departamento</th>")
-                .Append("<th>Descripcion</th>")
-                .Append("<th>Acciones</th>")
-                .Append("</tr>")
-                .Append("</thead>")
-                .Append("<tbody>")
-
-
-                conn3.Open()
-                cmd = New SqlClient.SqlCommand(sql, conn3)
-                dr = cmd.ExecuteReader()
-                If dr.HasRows Then
-                    While dr.Read
-                        .Append("<tr>")
-                        .Append("<td>")
-                        .Append(dr.Item("Id_Departamento").ToString)
-                        .Append("</td>")
-                        .Append("<td>")
-                        .Append(dr.Item("Nombre").ToString)
-                        .Append("</td>")
-                        .Append("<td>")
-                        .Append(dr.Item("Descripcion").ToString)
-                        .Append("</td>")
-                        .Append("<td>")
-                        .Append("<div class='row'>")
-                        .Append("<div class='col-md-4'>")
-                        .Append("<button class='btn btn-primary' data-toggle='modal' data-target='#exampleModal'><span><i class='fa fa-pencil' aria-hidden='True'></i></span></button>")
-                        .Append("</div>")
-                        .Append("<div class='col-md-4'>")
-                        .Append("<button class='btn btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></button>")
-                        .Append("</div>")
-                        .Append("</div>")
-                        .Append("</td>")
-                        .Append("</tr>")
-                    End While
-                End If
-                dr.Close()
-                conn3.Close()
-                .Append("<tfoot>")
-                .Append("<tr>")
-                .Append("<th>Id</th>")
-                .Append("<th>Departamento</th>")
-                .Append("<th>Descripcion</th>")
-                .Append("<th>Acciones</th>")
-                .Append("</tr>")
-                .Append("</tfoot>")
-                .Append("</tbody>")
-                .Append("</table>")
-            End With
-            Dim _literal As New Literal
-            _literal.Text = _html.ToString
-            PH1.Controls.Add(_literal)
-
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Llenar()
+
     End Sub
 
+    Sub GridView_Clientes_RowDeleted(sender As Object, e As GridViewDeletedEventArgs)
+        If e.Exception Is Nothing Then
+            lblInfo.Text = " ¡Cliente/s eliminado/s OK! "
+            lblInfo.CssClass = "label label-success"
+        Else
+            lblInfo.Text = " ¡Se ha producido un error al intentar elimnar el/los cliente/s! "
+            lblInfo.CssClass = "label label-danger"
+            e.ExceptionHandled = True
+        End If
+    End Sub
+
+    Sub GridView_Clientes_RowUpdated(sender As Object, e As GridViewUpdatedEventArgs)
+        If e.Exception Is Nothing Then
+            lblInfo.Text = " ¡Modificación realizada OK! "
+            lblInfo.CssClass = "label label-success"
+        Else
+            lblInfo.Text = " ¡Se ha producido un error al intentar modificar el cliente! "
+            lblInfo.CssClass = "label label-danger"
+            e.ExceptionHandled = True
+        End If
+    End Sub
+
+    Protected Sub GridView_Clientes_RowEditing(ByVal sender As Object, ByVal e As GridViewEditEventArgs)
+        lblInfo.Text = ""
+    End Sub
 End Class
