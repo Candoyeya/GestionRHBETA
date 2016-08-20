@@ -18,8 +18,8 @@ Copyright (C) Microsoft Corporation. Todos los derechos reservados.
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{65c242a1-42f7-4d26-a478-c92d9a368538}</ProjectGuid>
     <SourceWebPhysicalPath>$(MSBuildThisFileDirectory)</SourceWebPhysicalPath>
-    <SourceWebVirtualPath>/RhProyecto</SourceWebVirtualPath>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <SourceWebVirtualPath>/GestionRH</SourceWebVirtualPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <SourceWebProject>
     </SourceWebProject>
     <SourceWebMetabasePath>

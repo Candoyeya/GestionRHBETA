@@ -15,7 +15,6 @@
 <div class="row">
     <div class="table-responsive col-md-10">
         <form runat="server">
-
             <asp:GridView ID="example" runat="server" DataSourceID="Conn"
                 AutoGenerateColumns="False"
                 Class="gvv display" 
@@ -95,13 +94,42 @@
      </div>        
 </div>
 <%--Script java...--%>
+    <%--Cargar tabla con opciones y traducir al español...--%>
+    <%--Ultima actualizacion 20/08/2016...--%>
 <script>
         $(document).ready(function () {
-            $(".gvv").prepend($("<thead></thead><tfoot></tfoot>").append($(this).find("tr:first"))).dataTable();        
+            $(".gvv").prepend($("<thead></thead><tfoot></tfoot>").append($(this).find("tr:first"))).dataTable({
+                "language":
+                {
+                    "sProcessing": "Procesando...",
+                    "sLengthMenu": "Mostrar _MENU_ registros",
+                    "sZeroRecords": "No se encontraron resultados",
+                    "sEmptyTable": "Ningún dato disponible en esta tabla",
+                    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Buscar:",
+                    "sUrl": "",
+                    "sInfoThousands": ",",
+                    "sLoadingRecords": "Cargando...",
+                    "oPaginate": {
+                        "sFirst": "Primero",
+                        "sLast": "Último",
+                        "sNext": "Siguiente",
+                        "sPrevious": "Anterior"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                    }
+                }
+            });
             $('#example').DataTable();
     } );
     </script>
-
+<%--llamar funcion js add y cargar envior a json...--%>
+    <%--Ultima actualizacion 16/08/2016...--%>
 <script>
     $(function () { // Código de Añadir, Guardar, editar y eliminar funciones 
     $("#btnAdd").bind("click", Add);

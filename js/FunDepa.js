@@ -28,7 +28,7 @@ function Insert() {
         data: actionData,
         dataType: "json",
         contentType: "application/json; charset=utf-8",
-        success: function (msg) { window.location.reload() },
+        success: function (msg) { alert(msg.d);},
         error: function (result) {
             alert("ERROR " + result.status + ' ' + result.statusText);
         }
@@ -42,3 +42,7 @@ function Delete() {
         .remove()
         .draw();
 };
+
+function reloadPage() {    
+    location.reload();
+}
