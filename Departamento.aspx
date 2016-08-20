@@ -15,6 +15,8 @@
 <div class="row">
     <div class="table-responsive col-md-10">
         <form runat="server">
+            <%--Tabla GridView con diseño Display DAtaTAbleJQuery...--%>
+            <%--Ultima Actualizacion 17/08/2016...--%>
             <asp:GridView ID="example" runat="server" DataSourceID="Conn"
                 AutoGenerateColumns="False"
                 Class="gvv display" 
@@ -127,7 +129,7 @@
             });
             $('#example').DataTable();
     } );
-    </script>
+</script>
 <%--llamar funcion js add y cargar envior a json...--%>
     <%--Ultima actualizacion 16/08/2016...--%>
 <script>
