@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="" Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="Departamento.aspx.vb" Inherits="Departamento" %>
 <%--Creacion 9/08/2016...--%>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-    <script type="text/javascript" src="js/FunDepa.js"></script>
+    <script type="text/javascript" src="js/FunTablas.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="row">
@@ -16,8 +17,8 @@
     <div class="table-responsive col-md-10">
         <form runat="server">
             <%--Tabla GridView con diseño Display DAtaTAbleJQuery...--%>
-            <%--Ultima Actualizacion 17/08/2016...--%>
-            <asp:GridView ID="example" runat="server" DataSourceID="Conn"
+            <%--Ultima Actualizacion 17/08/2016...--%> 
+              <asp:GridView ID="Departamento" runat="server" DataSourceID="Conn"
                 AutoGenerateColumns="False"
                 Class="gvv display" 
                 DataKeyNames="Id_Departamento" 
@@ -76,6 +77,7 @@
                     </asp:TemplateField>
                 </Columns>                
             </asp:GridView>
+                
             <asp:SqlDataSource ID="Conn" runat="server" 
                 ConnectionString="Data Source=192.168.100.102; Initial Catalog=GestionRH; User id=sa; Password=B1Admin" 
                 DeleteCommand="DELETE FROM GestionRH.dbo.TDE WHERE Id_Departamento = @Id_Departamento" 
@@ -127,14 +129,14 @@
                     }
                 }
             });
-            $('#example').DataTable();
+            $('#Departamento').DataTable();
     } );
 </script>
 <%--llamar funcion js add y cargar envior a json...--%>
     <%--Ultima actualizacion 16/08/2016...--%>
 <script>
     $(function () { // Código de Añadir, Guardar, editar y eliminar funciones 
-    $("#btnAdd").bind("click", Add);
+        $("#btnAdd").bind("click", AddDepartamento);
     });
 </script>
 </asp:Content>

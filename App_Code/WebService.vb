@@ -19,7 +19,7 @@ Public Class WebService
 
     <WebMethod()>
     <Script.Services.ScriptMethod()>
-    Public Function GetDataAjax(ByVal nombre As String, ByVal descripcion As String) As String
+    Public Function AddDepartamento(ByVal nombre As String, ByVal descripcion As String) As String
         '---Ultima actualizacion 19/08/2016
         Try
             Dim ultimo As Integer = Nothing

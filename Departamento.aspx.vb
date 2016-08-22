@@ -1,10 +1,13 @@
 ﻿Imports System.Data
+Imports System.Web.Services
+Imports System.Web.Services.Protocols
+Imports System.Web.Script.Services
 Partial Class Departamento
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
         If IsPostBack Then
-            example.DataBind()
+            'example.DataBind()
         End If
     End Sub
 
