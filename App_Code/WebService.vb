@@ -57,8 +57,32 @@ Public Class WebService
             conn3.Close()
             Return ex.Message
         End Try
+
         Return "Registro Exitoso: " & nombre
 
     End Function
 
+    <WebMethod()>
+    <Script.Services.ScriptMethod()>
+    Public Function SelectDepartamento() As String
+        Dim SelectDepa As String = Nothing
+        Try
+            Dim sql As String = "Select t0.Id_Departamento,t0.Nombre From GestionRH.dbo.TDE T0 "
+
+            conn3.Open()
+            cmd = New SqlCommand(sql, conn3)
+            dr = cmd.ExecuteReader()
+            '--lectura 
+            If dr.HasRows Then
+                While dr.Read
+                    SelectDepa = SelectDepa & "<option value='" & dr.Item("Id_Departamento") & "'>" & dr.Item("Nombre") & "</option>"
+                End While
+            End If
+            conn3.Close()
+        Catch ex As Exception
+            conn3.Close()
+            Return ex.Message
+        End Try
+        Return SelectDepa
+    End Function
 End Class

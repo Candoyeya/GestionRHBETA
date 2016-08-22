@@ -36,4 +36,12 @@ Partial Class Departamento
     Protected Sub GridView_Clientes_RowEditing(ByVal sender As Object, ByVal e As GridViewEditEventArgs)
         lblInfo.Text = ""
     End Sub
+
+    <WebMethod()>
+    <Script.Services.ScriptMethod()>
+    Public Function Recargar() As String
+        If IsPostBack Then
+            Departamento.DataBind()
+        End If
+    End Function
 End Class

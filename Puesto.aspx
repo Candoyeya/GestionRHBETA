@@ -102,7 +102,7 @@
         </form>
     </div>
     <div class="table-responsive col-md-2">
-        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal"><span><i class="fa fa-plus" aria-hidden="true"></i></span></button>
+        <button id="btnAdd" type="button" class="btn btn-info" ><span><i class="fa fa-plus" aria-hidden="true"></i></span></button>
      </div>        
 </div>
 <%--Script java...--%>
@@ -144,7 +144,7 @@
     <%--Ultima actualizacion 22/08/2016...--%>
 <script>
     $(function () { // Código de Añadir, Guardar, editar y eliminar funciones 
-    $("#btnAdd").bind("click", Add);
+        $("#btnAdd").bind("click",AddPuesto);
     });
 </script>
 </asp:Content>
