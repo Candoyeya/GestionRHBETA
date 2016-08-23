@@ -62,7 +62,7 @@ function DeleteDepartamento() {
 };
 
 /*Seccion de Puesto
-Ultima actualizacion 22/08/2016*/
+Ultima actualizacion 23/08/2016*/
 function AddPuesto() {
     var OptionSelect
     $.ajax({
@@ -74,10 +74,8 @@ function AddPuesto() {
         success: function (response) {
             $(".gvv tbody").append("<tr>" + "<td></td>" +
                                     "<td><input type='text' Id='TxtNombre' class='in-text'/></td>" +
-                                    "<td><select Id='Disponible'><option value='1'>SI</option><option value='0'>NO</option></select></td>" +
-                                    //"<td><input type='text' Id='TxtDisponible' class='in-text'/></td>" +
-                                    //"<td><input type='text' Id='TxtDepartamento' class='in-text'/></td>" +
-                                    "<td><select Id='SelectDepa'>" + response.d + "</select></td>" +
+                                    "<td><select Id='SloDisponible' class='in-text'><option value='1'>SI</option><option value='0'>NO</option></select></td>" +
+                                    "<td><select Id='SloDepa' class='in-text'>" + response.d + "</select></td>" +
                                     "<td><div class='row'>" +
                                         "<div class='col-md-4'>" +
                                             "<button id='btnInsert' class='btn btn-success' class='btnInsert'><i class='fa fa-plus' aria-hidden='true'></i></button>" +
@@ -88,32 +86,31 @@ function AddPuesto() {
                                     "</div>" +
                                     "</td>" +
                                "</tr>");
+            $("#btnInsert").bind("click", InsertPuesto);
+            $(".btnDelete").bind("click", DeletePuesto);
         },
         error: function () {
             alert('Fallo al generar');
         }
-    });
-
-        
-    $("#btnInsert").bind("click", InsertPuesto);
-    $(".btnDelete").bind("click", DeletePuesto);
+    });        
+    
 };
 
 function InsertPuesto() {
     var snombre = $('#TxtNombre').val();
-    var sdescripcion = $('#TxtDescripcion').val();
+    var sdisponible = $('#SloDisponible').val();
+    var sdepartamento = $('#SloDepa').val();
 
-    var actionData = "{'nombre':'" + snombre + "','descripcion':'" + sdescripcion + "'}";
+    var actionData = "{'nombre':'" + snombre + "','disponible':'" + sdisponible + "','departamento':'" + sdepartamento + "'}";
 
     $.ajax({
         type: "POST",
-        url: "WebService.asmx/AddDepartamento",
+        url: "WebService.asmx/AddPuesto",
         data: actionData,
         dataType: "json",
         contentType: "application/json; charset=utf-8",
         success: function (msg) {
             alert(msg.d);
-
         },
         error: function (result) {
             alert("ERROR " + result.status + ' ' + result.statusText);

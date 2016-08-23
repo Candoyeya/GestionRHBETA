@@ -3,10 +3,10 @@ Partial Class Puesto
     Inherits System.Web.UI.Page
     Sub GridView_Clientes_RowDeleted(sender As Object, e As GridViewDeletedEventArgs)
         If e.Exception Is Nothing Then
-            lblInfo.Text = " ¡Cliente/s eliminado/s OK! "
+            lblInfo.Text = " ¡Puesto eliminado OK! "
             lblInfo.CssClass = "label label-success"
         Else
-            lblInfo.Text = " ¡Se ha producido un error al intentar elimnar el/los cliente/s! "
+            lblInfo.Text = " ¡Se ha producido un error al intentar elimnar el puesto! "
             lblInfo.CssClass = "label label-danger"
             e.ExceptionHandled = True
         End If
@@ -17,7 +17,7 @@ Partial Class Puesto
             lblInfo.Text = " ¡Modificación realizada OK! "
             lblInfo.CssClass = "label label-success"
         Else
-            lblInfo.Text = " ¡Se ha producido un error al intentar modificar el cliente! "
+            lblInfo.Text = " ¡Se ha producido un error al intentar modificar el puesto! "
             lblInfo.CssClass = "label label-danger"
             e.ExceptionHandled = True
         End If

@@ -16,7 +16,7 @@
     <div class="table-responsive col-md-10">
         <form runat="server">
             <%--Tabla GridView con diseño Display DAtaTAbleJQuery...--%>
-            <%--Ultima Actualizacion 22/08/2016...--%> 
+            <%--Ultima Actualizacion 23/08/2016...--%> 
               <asp:GridView ID="Puesto" runat="server" DataSourceID="Conn"
                 AutoGenerateColumns="False"
                 Class="gvv display" 
@@ -41,20 +41,24 @@
                             <asp:TextBox ID="Txtnombre" runat="server" Text='<%# Bind("Nombre")%>' CssClass="form-control" ></asp:TextBox>
                         </EditItemTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderStyle-Width="150px" HeaderText="Disponible">
+                    <asp:TemplateField HeaderStyle-Width="150px" HeaderText="Disponible" SortExpression="Disponible">
                         <ItemTemplate>
                             <asp:Label id="lblDisponible" runat="server"><%# Eval("Disponible")%></asp:Label>
                         </ItemTemplate>
                         <EditItemTemplate>
-                            <asp:TextBox ID="TxtDisponible" runat="server" Text='<%# Bind("Disponible")%>' CssClass="form-control" ></asp:TextBox>
+                            <asp:DropDownList ID="DdlDisponible" runat="server" CssClass="form-control" DataValueField="Disponible" SelectedValue='<%# Bind("Disponible") %>' AppendDataBoundItems="True">
+                                <asp:ListItem Value="SI" >SI</asp:ListItem>
+                                <asp:ListItem Value="NO">NO</asp:ListItem>
+                            </asp:DropDownList>                            
                         </EditItemTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderStyle-Width="150px" HeaderText="Departamento">
+                    <asp:TemplateField HeaderStyle-Width="150px" HeaderText="Departamento" SortExpression="Departamento">
                         <ItemTemplate>
                             <asp:Label id="lblDepartamento" runat="server"><%# Eval("Departamento")%></asp:Label>
                         </ItemTemplate>
                         <EditItemTemplate>
-                            <asp:TextBox ID="TxtDepartamento" runat="server" Text='<%# Bind("Departamento")%>' CssClass="form-control" ></asp:TextBox>
+                            <asp:DropDownList ID="DdlDepartamento" runat="server" CssClass="form-control" DataSourceID="Conn2" DataValueField="Departamento" DataTextField="Departamento" SelectedValue='<%# Bind("Departamento") %>' AppendDataBoundItems="True">                                
+                            </asp:DropDownList>                            
                         </EditItemTemplate>
                     </asp:TemplateField>
                     <%--botones de acción sobre los registros...--%>
@@ -89,15 +93,21 @@
                 ConnectionString="Data Source=192.168.100.102; Initial Catalog=GestionRH; User id=sa; Password=B1Admin" 
                 DeleteCommand="DELETE FROM GestionRH.dbo.TPD WHERE Id_Puesto = @Id_Puesto" 
                 SelectCommand="Select T0.Id_Puesto,T0.Nombre,Disponible=(CASE WHEN T0.Disponible=1 THEN 'SI' ELSE 'NO' END),Departamento=T1.Nombre From GestionRH.dbo.TPD T0 Inner Join GestionRH.dbo.TDE T1 ON (T1.Id_Departamento=T0.Id_Departamento)" 
-                UpdateCommand="UPDATE GestionRH.dbo.TPD SET Nombre = @Nombre, Disponible = (CASE WHEN @Disponible='SI' THEN 1 ELSE 0 END),Id_Departamento=(Select T0.Id_Departamento From GestionRH.dbo.TDE T0 Where T0.Nombre=@Departamento) WHERE Id_Puesto = @Id_Puesto">
+                UpdateCommand="UPDATE GestionRH.dbo.TPD SET Nombre = @Nombre, Disponible = (CASE WHEN @Disponible='SI' THEN 1 ELSE 0 END),Id_Departamento=(Select t1.Id_Departamento From GestionRH.dbo.TDE t1 where t1.Nombre=@Departamento) WHERE Id_Puesto = @Id_Puesto">
                 <DeleteParameters>
                     <asp:Parameter Name="Id_Puesto" Type="Int32" />
                 </DeleteParameters>
                 <UpdateParameters>
                     <asp:Parameter Name="Nombre" Type="String" />
                     <asp:Parameter Name="Disponible" Type="String" />
-                    <asp:Parameter Name="Departamento" Type="String" />
+                    <asp:Parameter Name="Departamento" Type="String" />                    
+                   <%--  <asp:Parameter Name="Disponible" Type="String" />
+                    <asp:Parameter Name="Departamento" Type="String" />--%>
                 </UpdateParameters>                               
+            </asp:SqlDataSource>
+            <asp:SqlDataSource ID="conn2" runat="server" 
+                ConnectionString="Data Source=192.168.100.102; Initial Catalog=GestionRH; User id=sa; Password=B1Admin" 
+                SelectCommand="Select Departamento=T0.Nombre From GestionRH.dbo.TDE T0 ">                                              
             </asp:SqlDataSource>
         </form>
     </div>
