@@ -92,7 +92,7 @@ Public Class WebService
         '---Ultima actualizacion 19/08/2016
         Try
             Dim ultimo As Integer = Nothing
-            Dim sql As String = "Select Ultimo=(MAX(t0.Id_Puesto)) From GestionRH.dbo.TPD T0"
+            Dim sql As String = "Select Ultimo=(MAX(t0.Id_Puesto)+1) From GestionRH.dbo.TPD T0"
 
             conn3.Open()
             cmd = New SqlCommand(sql, conn3)
