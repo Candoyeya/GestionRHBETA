@@ -129,6 +129,5 @@
             $('#Vacantes').DataTable();
     } );
 </script>
-</script>
 </asp:Content>
 
