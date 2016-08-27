@@ -25,24 +25,24 @@
                 <Columns>
  
                     <%--campos no editables...--%>
-                    <asp:BoundField DataField="Id_Reg" HeaderText="Nº" InsertVisible="False" ReadOnly="True" SortExpression="Id_Puesto" ControlStyle-Width="70px" />
+                    <asp:BoundField DataField="Id_Reg" HeaderText="Nº" InsertVisible="False" ReadOnly="True" SortExpression="Id_Reg" ControlStyle-Width="70px" />
                     <asp:BoundField DataField="Nombre" HeaderText="Nombre" InsertVisible="False" ReadOnly="True" SortExpression="Nombre" ControlStyle-Width="70px" />
                     <asp:BoundField DataField="Puesto" HeaderText="Puesto" InsertVisible="False" ReadOnly="True" SortExpression="Puesto" ControlStyle-Width="70px" />
                     <asp:BoundField DataField="Departamento" HeaderText="Departamento" InsertVisible="False" ReadOnly="True" SortExpression="Departamento" ControlStyle-Width="70px" />
                     <asp:ImageField HeaderText="Foto" DataImageUrlField="Foto" ControlStyle-Width="40px">                        
                     </asp:ImageField>
-                                         
-                    <%--botones de acción sobre los registros...--%>
+                    <asp:HyperLinkField HeaderText="Acciones" DataNavigateUrlFields="Id_Reg" DataNavigateUrlFormatString="Editar.aspx?Id_Reg={0}" Text='<i class="fa fa-pencil"></i>' ControlStyle-CssClass="btn btn-info" />                                     
+                    <%--botones de acción sobre los registros...
                     <asp:TemplateField ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="200px" HeaderText="Acciones">
                         <ItemTemplate>
-                            <%--Botones de eliminar y editar cliente...--%>
+                            <%--Botones de eliminar y editar cliente...
                             <div class="row">                              
                               <div class="col-md-4">
-                                  <asp:LinkButton ID="btnEdit" runat="server" Text='<i class="fa fa-pencil"></i>' CssClass="btn btn-info"/>
+                                  <asp:HyperLink CssClass="btn btn-info" text='<i class="fa fa-pencil"></i>' ></asp:HyperLink>
                               </div>
                             </div> 
                         </ItemTemplate>                        
-                    </asp:TemplateField>
+                    </asp:TemplateField>--%>
                 </Columns>                
             </asp:GridView>
                 

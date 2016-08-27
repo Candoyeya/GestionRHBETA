@@ -37,11 +37,4 @@ Partial Class Departamento
         lblInfo.Text = ""
     End Sub
 
-    <WebMethod()>
-    <Script.Services.ScriptMethod()>
-    Public Function Recargar() As String
-        If IsPostBack Then
-            Departamento.DataBind()
-        End If
-    End Function
 End Class

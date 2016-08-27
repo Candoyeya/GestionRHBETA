@@ -74,8 +74,8 @@ function AddPuesto() {
         success: function (response) {
             $(".gvv tbody").append("<tr>" + "<td></td>" +
                                     "<td><input type='text' Id='TxtNombre' class='in-text'/></td>" +
-                                    "<td><select Id='SloDisponible' class='formulario_select'><option value='1'>SI</option><option value='0'>NO</option></select></td>" +
-                                    "<td><select Id='SloDepa' class='formulario_select'>" + response.d + "</select></td>" +
+                                    "<td><select Id='SloDisponible' class='form-control'><option value='1'>SI</option><option value='0'>NO</option></select></td>" +
+                                    "<td><select Id='SloDepa' class='form-control'>" + response.d + "</select></td>" +
                                     "<td><div class='row'>" +
                                         "<div class='col-md-4'>" +
                                             "<button id='btnInsert' class='btn btn-success' class='btnInsert'><i class='fa fa-plus' aria-hidden='true'></i></button>" +
